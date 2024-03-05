@@ -1,0 +1,233 @@
+:root {
+   --color1: #f3f5fc;
+   --color2: #eff1fa;
+   --color3: #e9ecf8;
+   --color4: #aab2d5;
+   --color5: #757fb2;
+   --color6: #404561;
+}
+
+body {
+   /*tipografías para todo el sitio*/
+   font-family: "IBM Plex Mono", monospace;
+   font-weight: 100;
+   font-size: 1rem;
+   font-style: normal;
+   background-color: var(--color3);
+}
+
+.titulo {
+   margin: 0;
+   padding-left: 1rem;
+   font-size: 3rem;
+   color: var(--color3);
+   font-weight: 600;
+}
+.subtitulo {
+   margin: 0;
+   font-size: 0.75rem;
+   color: var(--color6);
+   font-weight: 200;
+}
+
+.texto-info {
+   font-size: 0.75rem;
+   font-weight: 200;
+}
+
+.encabezado-flex {
+   width: 100%;
+   height: 4rem;
+   position: fixed;
+   z-index: 1000;
+   top: 0;
+   padding: 2%;
+   display: block;
+   text-align: left;
+   background-color: var(--color6);
+   background-image: url(diamod.png);
+   background-blend-mode: multiply;
+}
+
+main {
+   display: flex;
+   vertical-align: middle;
+   margin-top: 12rem;
+   margin-bottom: 12rem;
+   padding-top: 4rem;
+   overflow: auto;
+}
+
+/* sections */
+.entrada-flex,
+.salida-flex {
+   width: 50%;
+   height: 100%;
+   box-sizing: content-box;
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   background-color: var(--color3);
+   padding: 1%;
+   border: none;
+   margin: 1%;
+}
+
+textarea {
+   width: 90%;
+   border-radius: 0.6rem;
+   margin: 1rem;
+   text-transform: lowercase;
+   font-size: 1.25rem;
+   font-weight: 500;
+   position: relative;
+   border: none;
+}
+textarea:focus {
+   outline: none;
+   border: 3px solid var(--color5);
+}
+
+textarea.text-in {
+   background-color: var(--color2);
+   color: var(--color6);
+}
+
+textarea.text-out {
+   background-color: var(--color1);
+   border-color: var(--color1);
+   background-image: url(muneco.png);
+   background-size: 35%;
+   background-repeat: no-repeat;
+   background-position-x: center;
+   background-position-y: center;
+}
+
+::placeholder {
+   color: var(--color5);
+   font-size: 1.25rem;
+   font-weight: 500;
+}
+
+/* botones */
+.botones-flex {
+   margin-top: auto;
+   display: inline-block;
+   vertical-align: bottom;
+}
+
+.btn {
+   width: 6rem;
+   height: 2.5rem;
+   font-size: 0.75rem;
+   font-weight: 600;
+   padding: 0.1rem;
+   margin: 1rem 1rem;
+   border: 2px solid;
+   border-radius: 0.5rem;
+   cursor: pointer;
+}
+.btn:hover {
+   transform: scale(1.05);
+}
+#encriptar {
+   background-color: var(--color6);
+   border-color: var(--color6);
+   color: var(--color1);
+}
+
+#desencriptar {
+   background-color: var(--color5);
+   border-color: var(--color5);
+}
+
+#copiar {
+   background-color: var(--color4);
+   border-color: var(--color4);
+}
+
+/* footer */
+.footer-flex {
+   width: 100%;
+   height: 3rem;
+   padding: 2%;
+   display: block;
+   position: fixed;
+   text-align: center;
+   bottom: 0;
+   z-index: 1000;
+   background-color: var(--color4);
+}
+.titulo{
+      padding-left: 2rem;
+   }
+
+.logo {
+   width: calc(10%);
+   margin: 1rem 1.5rem;
+   display: none;
+}
+
+@media screen and (max-width: 900px) {
+   .header-flex,
+   .footer-flex {
+      width: 100%;
+      position: fixed;
+   }
+   main {
+      flex-direction: column;
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+   }
+   .entrada-flex,
+   .salida-flex {
+      width: 100%;
+      margin: auto;
+      padding: 2rem;
+      box-sizing: content-box;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .header-flex,
+   .footer-flex {
+      width: 100%;
+      position: fixed;
+      text-align: center;
+   }
+   
+   .subtitulo {
+      font-size: 1rem;
+   }
+
+   main {
+      width: 500px;
+      flex-direction: column;
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+   }
+
+   .entrada-flex,
+   .salida-flex {
+      width: 60%;
+      margin: 1rem;
+      padding: 1rem;
+      box-sizing: content-box;
+   }
+
+   textarea.text-out{
+      background-size: 70%;
+   }
+
+   .btn {
+   width: 5rem;
+   height: 2rem;
+   font-size: 0.75rem;
+   font-weight: 600;
+   padding: 0.1rem;
+   margin: 1rem 1rem;
+   border: 2px solid;
+   border-radius: 0.5rem;
+   cursor: pointer;
+}
+}
